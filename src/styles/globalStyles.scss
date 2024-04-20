@@ -1,0 +1,22 @@
+
+:root {
+
+    --font-primary:"inter", sans-serif;
+
+    --color-primary: rgba(39, 174, 96, 1);
+    --color-secondary:  rgba(235, 87, 87, 1);
+    --color-grey-600:  rgba(51, 51, 51, 1);
+    --color-grey-300:  rgba(130, 130, 130, 1);
+    --color-grey-100:  rgba(224, 224, 224, 1);
+    --color-grey-0:  rgba(245, 245, 245, 1);
+
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color:  rgba(255, 255, 255, 1);    
+}
+
+
+
+
