@@ -1,4 +1,4 @@
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, addToCart }) => {
     return(
         <li>
             <img src={product.img} alt={product.name} />
@@ -6,7 +6,7 @@ export const ProductCard = ({ product }) => {
                 <h3>{product.name}</h3>
                 <span>{product.category}</span>
                 <span>{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
-                <button>Adicionar</button>
+                <button onClick={() => addToCart(product)}>Adicionar</button>
             </div>
         </li>
     )

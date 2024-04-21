@@ -17,7 +17,7 @@ export const Header = () => {
                      <span>0</span>
                   </div>
                </button>
-               {/* <form>
+               <form>
                <input
                   type="text"
                   value={value}
@@ -26,7 +26,7 @@ export const Header = () => {
                <button type="submit">
                  <MdSearch size={21} />
                </button>
-            </form> */}
+            </form>
             </div>
          </div>
 
