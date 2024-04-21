@@ -3,21 +3,26 @@ import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import styles from "./styles.module.scss";
 
-export const Header = () => {
+export const Header = ({ toggleCartVisibility, setSearchTerm, cartItemCount }) => {
    const [value, setValue] = useState("");
 
+   const handleSubmit = (e) => {
+       e.preventDefault();  // Impede o recarregamento da página
+       setSearchTerm(value);  // Atualiza o termo de busca no estado do componente pai
+   };
+
    return (
-      <header className={styles.headerGrid} >
+      <header className={styles.headerGrid}>
          <div className={styles.menuGrid}>
             <img src={Logo} alt="Logo Kenzie Burguer" />
-            <div className={styles.cartGrid} >
-               <button className={styles.cartImg} >
+            <div className={styles.cartGrid}>
+               <button className={styles.cartImg} onClick={toggleCartVisibility}>
                   <MdShoppingCart size={21} />
                   <div className={styles.cartItens}>
-                     <span>0</span>
+                     <span>{cartItemCount}</span>
                   </div>
                </button>
-               <form>
+               <form onSubmit={handleSubmit}>
                <input
                   type="text"
                   value={value}
@@ -29,7 +34,7 @@ export const Header = () => {
             </form>
             </div>
          </div>
-
       </header>
    );
 };
+
