@@ -7,14 +7,17 @@ export const Header = () => {
    const [value, setValue] = useState("");
 
    return (
-      <header>
-         <img src={Logo} alt="Logo Kenzie Burguer" />
-         <div>
-            <button>
-                <MdShoppingCart size={21} />
-                <span>0</span>
-            </button>
-            <form>
+      <header className={styles.headerGrid} >
+         <div className={styles.menuGrid}>
+            <img src={Logo} alt="Logo Kenzie Burguer" />
+            <div className={styles.cartGrid} >
+               <button className={styles.cartImg} >
+                  <MdShoppingCart size={21} />
+                  <div className={styles.cartItens}>
+                     <span>0</span>
+                  </div>
+               </button>
+               {/* <form>
                <input
                   type="text"
                   value={value}
@@ -23,8 +26,10 @@ export const Header = () => {
                <button type="submit">
                  <MdSearch size={21} />
                </button>
-            </form>
+            </form> */}
+            </div>
          </div>
+
       </header>
    );
 };

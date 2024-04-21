@@ -1,0 +1,43 @@
+@mixin buttonDefault {
+    width: Hug (130px)px;
+    height: Fixed (60px)px;
+    top: 20px;
+    left: 20px;
+    padding: 0px 20px 0px 20px;
+    gap: 10px;
+    border-radius: 8px 0px 0px 0px;
+    opacity: 0px;
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: left;
+    background-color: rgba(189, 189, 189, 1);
+    color: rgba(255, 255, 255, 1);
+
+    :hover {
+        background-color: rgba(39, 174, 96, 1);
+    }
+}
+
+@mixin buttonMedium {
+    width: Hug (130px)px;
+    height: Fixed (40px)px;
+    top: 20px;
+    left: 20px;
+    padding: 0px 20px 0px 20px;
+    gap: 10px;
+    border-radius: 8px 0px 0px 0px;
+    opacity: 0px;
+    background-color: rgba(189, 189, 189, 1);
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+
+    :hover {
+        background-color: rgba(39, 174, 96, 1);
+    }
+}

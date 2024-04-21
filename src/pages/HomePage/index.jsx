@@ -2,6 +2,8 @@ import { useState } from "react";
 import { CartModal } from "../../components/CartModal";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
+import styles from "./styles.module.scss";
+
 
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
@@ -17,10 +19,12 @@ export const HomePage = () => {
    return (
       <>
          <Header />
-         <main>
+         <main className={styles.mainGrid} >
             <ProductList productList={productList} />
             <CartModal cartList={cartList} />
          </main>
       </>
    );
 };
+
+
