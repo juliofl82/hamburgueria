@@ -59,7 +59,7 @@ export const HomePage = () => {
             />
             <main className={styles.mainGrid}>
                 <ProductList productList={filteredProducts} addToCart={addToCart} />
-                <CartModal cartList={cartList} />
+                {/* <CartModal cartList={cartList} /> */}
             </main>
         </>
     );

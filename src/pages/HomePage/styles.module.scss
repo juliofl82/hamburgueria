@@ -1,8 +1,10 @@
 .mainGrid{
     display: flex;
+    flex-direction: row;     
     margin: 0 auto;
     max-width: 85.5rem;
     width: 100vw;
-    max-height: 46.5rem;
-    height: 100vh;    
+    height: 100vh;
+    gap: 10px;   
+    background-color: orange;       
 }
