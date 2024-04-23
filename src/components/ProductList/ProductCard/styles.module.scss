@@ -11,6 +11,13 @@
     margin-top: 20px;
     border-radius: 5px;
     
+    &:hover {
+        border: 2px solid var(--color-primary);
+
+        button{
+            background-color: var(--color-primary);
+        }
+    }
     
 
     .imgBox{
