@@ -30,11 +30,12 @@
         justify-content: center;
         margin: 0 auto;
         background-color: var(--color-grey-0);
+        // overflow: hidden;
         }   
 
         img {
-            width: 177px;
-            height: 177px;
+            max-width: 177px;
+            max-height: 177px;                    
         }        
 }
 
@@ -48,7 +49,20 @@
     justify-content: space-around;
     padding: 20px;
     gap: 10px;  
+
+    .productName{
+        @include typo-heading3;
+    }
+
+    .productCategory{
+        @include typo-caption;
+    }    
     
+    .price{
+        @include typo-body600;
+        color: var(--color-primary);
+    }
+
     button {
         @include buttonMedium;
     }
