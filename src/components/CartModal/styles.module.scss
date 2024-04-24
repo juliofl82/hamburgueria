@@ -1,0 +1,27 @@
+@import "../../styles/index.scss";
+
+.modalCard{
+    display: flex;
+    flex-direction: column;
+    width: 484px;
+    height: 408px;
+    border-radius: 8px;
+    border: none;
+    position: fixed;
+    z-index: 10;
+    top: 30%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 1);
+    ;    
+
+    button {
+        @include buttonDefault;
+    }
+}
+
+.modalHeader {
+    display: flex;
+    width: 100%;
+    height: 57px;
+    background-color: green;
+}

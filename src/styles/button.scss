@@ -5,7 +5,7 @@
     left: 20px;
     padding: 0px 20px 0px 20px;
     gap: 10px;
-    border-radius: 8px 0px 0px 0px;
+    border-radius: 8px;
     opacity: 0px;
     font-family: $font-primary;
     font-size: 16px;
@@ -13,6 +13,7 @@
     line-height: 19.36px;
     background-color: rgba(189, 189, 189, 1);
     color: rgba(255, 255, 255, 1);
+    border: none;
 
     :hover {
         background-color: var(--color-primary);
