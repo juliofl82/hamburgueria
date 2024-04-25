@@ -27,6 +27,15 @@ $font-primary: 'Inter', sans-serif;
     color: rgba(51, 51, 51, 1);
 }
 
+@mixin typo-heading4 {
+    font-family: $font-primary;
+font-size: 18px;
+font-weight: 700;
+line-height: 28px;
+text-align: left;
+color: rgba(255, 255, 255, 1);
+}
+
 @mixin typo-headline {
     font-family: $font-primary;
     font-size: 16px;
