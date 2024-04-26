@@ -50,6 +50,14 @@ export const HomePage = () => {
         product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    const removeItem = (productId) => {
+        setCartList(currentCartList => currentCartList.filter(item => item.id !== productId));
+    };    
+
+    const clearCart = () => {
+        setCartList([]);
+    };
+
     return (
         <>
             <Header 
@@ -59,7 +67,12 @@ export const HomePage = () => {
             />
             <main className={styles.mainGrid}>
                 <ProductList productList={filteredProducts} addToCart={addToCart} />
-                {isCartVisible && <CartModal cartList={cartList} toggleCartVisibility={toggleCartVisibility} />}            
+                {isCartVisible && <CartModal 
+                cartList={cartList} 
+                toggleCartVisibility={toggleCartVisibility}
+                removeItem={removeItem}
+                clearCart={clearCart}
+                 />}            
             </main>
         </>
     );

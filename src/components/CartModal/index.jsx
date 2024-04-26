@@ -2,13 +2,12 @@ import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
 import styles from "./styles.module.scss";
 
-export const CartModal = ({ cartList, toggleCartVisibility }) => {
+export const CartModal = ({ cartList, toggleCartVisibility, removeItem, clearCart }) => {
    const total = cartList.reduce((prevValue, product) => {
-      return prevValue + product.price;
+      return prevValue + product.price * (product.quantity || 1);
    }, 0);
 
    return (
-
       <div className={styles.modalOverlay}>
          <div className={styles.modalCard} role="dialog">
             <div className={styles.modalHeader}>
@@ -20,7 +19,7 @@ export const CartModal = ({ cartList, toggleCartVisibility }) => {
             <div>
                <ul>
                   {cartList.map((product) => (
-                     <CartItemCard key={product.id} product={product} />
+                     <CartItemCard key={product.id} product={product} onRemoveItem={() => removeItem(product.id)} />
                   ))}
                </ul>
             </div>
@@ -30,7 +29,7 @@ export const CartModal = ({ cartList, toggleCartVisibility }) => {
                      <span>Total</span>
                      <span>{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL" })}</span>
                   </div>
-                  <button className={styles.deleteAllButton}>Remover todos</button>
+                  <button onClick={clearCart} className={styles.deleteAllButton}>Remover todos</button>
                </div>
             </div>
          </div>
