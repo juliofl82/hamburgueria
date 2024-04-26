@@ -1,10 +1,15 @@
 @import "../../../styles/index.scss";
 
+.cardContainer {
+    display: flex;
+}
+
+
 .cardGrid {
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    width: 100%; 
+    width: 300px; 
     max-height: 21.625rem;
     height: 100%;
     border: 2px solid rgba(189, 189, 189, 1);
@@ -64,6 +69,29 @@
     button {
         @include buttonMedium;
     }
+    }  
+
+    @media (min-width:320px) and (max-width:426px){
+
+        .cardContainer {
+            display: flex;
+        }
+        
+        
+        .cardGrid {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            width: 300px; 
+            max-height: 21.625rem;
+            height: 100%;
+            border: 2px solid rgba(189, 189, 189, 1);
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    
     }
+
+    
 
 

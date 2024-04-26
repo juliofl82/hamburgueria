@@ -7,16 +7,14 @@
     align-items: flex-start;
     width: 484px;
     height: 100%;     
-    padding-left: 10px;
-    
+    padding-left: 10px;    
 
     .itemGrid {
         display: flex;
-        width: 439.31px;
+        width: 27.4569rem;
         height: 80px;
         margin-top: 5px;
-        margin-bottom: 10px;
-        
+        margin-bottom: 10px;        
 
         .buttonDeleteItenCart {
             display: flex;            
@@ -24,13 +22,12 @@
             color:  rgba(189, 189, 189, 1);   
             align-items: center;    
             border: none;
-
         }        
     }
 
     .cartItens {
         display: flex;
-        width: 439.31px;
+        width: 27.4569rem;
         height: 80px;
         align-items: center;
         gap: 14px;
@@ -39,8 +36,7 @@
             margin-top: 5px;
             color: var(--color-primary);
             font-size: 14px;   
-            font-weight: 600;         
-
+            font-weight: 600;
         }
 
         .imgCart {
@@ -51,13 +47,73 @@
             border-radius: 5px;
 
             img {
-                width: 100%; // Faz a imagem preencher a largura total do contêiner
-                height: 100%; // Faz a imagem preencher a altura total do contêiner
-                object-fit: cover; // Mantém as proporções, preenchendo o espaço e cortando excesso se necessário
+                width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
                 object-position: center;
-                margin: 0 auto;
-                
+                margin: 0 auto;                
             }
         }        
     }
 }
+
+@media (min-width:320px) and (max-width:426px){    
+
+    .listGrid {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        max-width: 397px;
+        height: 100%;     
+        padding-left: 10px;
+          
+    
+        .itemGrid {
+            display: flex;            
+            width: 27.4569rem;
+            height: 80px;
+            margin-top: 5px;
+            margin-bottom: 10px;        
+    
+            .buttonDeleteItenCart {
+                display: flex;            
+                background-color: transparent ;
+                color:  rgba(189, 189, 189, 1);   
+                align-items: center;    
+                border: none;                
+            }        
+        }
+    }
+    .cartItens {
+        display: flex;
+        width: 22.6875rem;
+        height: 80px;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 14px;
+
+        p{
+            margin-top: 5px;
+            color: var(--color-primary);
+            font-size: 14px;   
+            font-weight: 600;
+        }
+
+        .imgCart {
+            width: 82.23px;
+            height: 80px;
+            background-color: var(--color-grey-100);
+            margin: 0 auto;
+            border-radius: 5px;
+
+            img {
+                width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+                object-position: center;
+                margin: 0 auto;                
+            }
+        }        
+    }
+}
+

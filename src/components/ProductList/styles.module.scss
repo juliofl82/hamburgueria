@@ -10,3 +10,13 @@
     height: 100%;
     gap: 56px;          
 }
+
+@media (min-width:320px) and (max-width:426px) {
+    .listGrid {
+        display: flex;         
+        flex-wrap: nowrap;        
+        max-width: 620px;                
+        margin: 0 10px;
+        overflow-y: hidden;             
+    }
+}

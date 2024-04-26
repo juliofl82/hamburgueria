@@ -106,3 +106,63 @@
         margin-bottom: 10px;
     }
 }
+
+@media (min-width:320px) and (max-width:426px) {
+
+    .modalCard {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        max-width: 484px;
+        width: 397px;
+        max-height: 408px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 1);
+        justify-content: space-between;
+        overflow-y: auto;
+    }
+
+    .totalBox {
+        display: flex;
+        width: 100%;
+    }
+
+    .totalCartGrid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 121px;
+        margin: 0 auto;
+        margin-top: 10px;
+        border-top: 2px solid rgba(224, 224, 224, 1);
+    
+        .totalCart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 104px;
+        }
+    
+        .deleteAllButton {
+            width: 100%;
+            height: 60px;
+            border-radius: 8px;
+            align-items: center;
+            justify-content: center;
+            font-family: $font-primary;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+
+
