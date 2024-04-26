@@ -1,0 +1,61 @@
+@import "../../../styles/index.scss";
+
+
+.listGrid {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 484px;
+    height: 100%;     
+    padding-left: 10px;
+    
+
+    .itemGrid {
+        display: flex;
+        width: 439.31px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        
+
+        .buttonDeleteItenCart {
+            display: flex;            
+            background-color: transparent;
+            color:  rgba(189, 189, 189, 1);   
+            align-items: center;         
+        }        
+    }
+
+    .cartItens {
+        display: flex;
+        width: 439.31px;
+        height: 80px;
+        align-items: center;
+        gap: 14px;
+
+        p{
+            margin-top: 5px;
+            color: var(--color-primary);
+            font-size: 14px;   
+            font-weight: 600;         
+
+        }
+
+        .imgCart {
+            width: 82.23px;
+            height: 80px;
+            background-color: var(--color-grey-100);
+            margin: 0 auto;
+            border-radius: 5px;
+
+            img {
+                width: 100%; // Faz a imagem preencher a largura total do contêiner
+                height: 100%; // Faz a imagem preencher a altura total do contêiner
+                object-fit: cover; // Mantém as proporções, preenchendo o espaço e cortando excesso se necessário
+                object-position: center;
+                margin: 0 auto;
+                
+            }
+        }        
+    }
+}

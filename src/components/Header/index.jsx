@@ -7,8 +7,8 @@ export const Header = ({ toggleCartVisibility, setSearchTerm, cartItemCount }) =
    const [value, setValue] = useState("");
 
    const handleSubmit = (e) => {
-       e.preventDefault();  // Impede o recarregamento da página
-       setSearchTerm(value);  // Atualiza o termo de busca no estado do componente pai
+       e.preventDefault();  
+       setSearchTerm(value);  
    };
 
    return (

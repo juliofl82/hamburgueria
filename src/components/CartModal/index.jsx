@@ -24,12 +24,14 @@ export const CartModal = ({ cartList, toggleCartVisibility }) => {
                   ))}
                </ul>
             </div>
-            <div>
-               <div>
-                  <span>Total</span>
-                  <span>{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL" })}</span>
+            <div className={styles.totalBox}>
+               <div className={styles.totalCartGrid}>
+                  <div className={styles.totalCart}>
+                     <span>Total</span>
+                     <span>{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL" })}</span>
+                  </div>
+                  <button className={styles.deleteAllButton}>Remover todos</button>
                </div>
-               <button>Remover todos</button>
             </div>
          </div>
       </div>
