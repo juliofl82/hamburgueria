@@ -56,7 +56,7 @@ export const HomePage = () => {
 
     const clearCart = () => {
         setCartList([]);
-    };
+    };   
 
     return (
         <>
