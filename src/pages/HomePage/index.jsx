@@ -11,6 +11,7 @@ export const HomePage = () => {
     const [isCartVisible, setIsCartVisible] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
 
+    // Carrega produtos da API
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -23,60 +24,59 @@ export const HomePage = () => {
         fetchProducts();
     }, []);
 
+    // Persistência dos produtos e do carrinho no localStorage
     useEffect(() => {
         localStorage.setItem('productList', JSON.stringify(productList));
-    }, [productList]);
-
-    useEffect(() => {
         localStorage.setItem('cartList', JSON.stringify(cartList));
-    }, [cartList]);
+    }, [productList, cartList]);
 
     const addToCart = (product) => {
         const existingItem = cartList.find(item => item.id === product.id);
-        if (existingItem) {
-            setCartList(cartList.map(item => item.id === product.id ? {...item, quantity: item.quantity + 1} : item));
-        } else {
-            setCartList([...cartList, {...product, quantity: 1}]);
-        }
+        setCartList(existingItem ?
+            cartList.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item) :
+            [...cartList, { ...product, quantity: 1 }]
+        );
     };
 
     const toggleCartVisibility = () => {
         setIsCartVisible(!isCartVisible);
     };
 
-    const cartItemCount = cartList.reduce((total, item) => total + item.quantity, 0);
+    const removeItem = (productId) => {
+        setCartList(currentCartList => currentCartList.filter(item => item.id !== productId));
+    };
 
+    const clearCart = () => {
+        setCartList([]);
+    };
+
+    const cartItemCount = cartList.reduce((total, item) => total + item.quantity, 0);
     const filteredProducts = productList.filter(product =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    const removeItem = (productId) => {
-        setCartList(currentCartList => currentCartList.filter(item => item.id !== productId));
-    };    
-
-    const clearCart = () => {
-        setCartList([]);
-    };   
-
     return (
         <>
-            <Header 
-                toggleCartVisibility={toggleCartVisibility} 
-                setSearchTerm={setSearchTerm} 
+            <Header
+                toggleCartVisibility={toggleCartVisibility}
+                setSearchTerm={setSearchTerm}
                 cartItemCount={cartItemCount}
             />
             <main className={styles.mainGrid}>
                 <ProductList productList={filteredProducts} addToCart={addToCart} />
-                {isCartVisible && <CartModal 
-                cartList={cartList} 
-                toggleCartVisibility={toggleCartVisibility}
-                removeItem={removeItem}
-                clearCart={clearCart}
-                 />}            
+                {isCartVisible && (
+                    <CartModal
+                        cartList={cartList}
+                        toggleCartVisibility={toggleCartVisibility}
+                        removeItem={removeItem}
+                        clearCart={clearCart}
+                    />
+                )}
             </main>
         </>
     );
 };
+
 
 
 

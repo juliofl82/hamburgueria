@@ -22,7 +22,7 @@ export const Header = ({ toggleCartVisibility, setSearchTerm, cartItemCount }) =
                      <span>{cartItemCount}</span>
                   </div>
                </button>
-               <form onSubmit={handleSubmit}>
+               {/* <form onSubmit={handleSubmit}>
                <input
                   type="text"
                   value={value}
@@ -31,7 +31,7 @@ export const Header = ({ toggleCartVisibility, setSearchTerm, cartItemCount }) =
                <button type="submit">
                  <MdSearch size={21} />
                </button>
-            </form>
+            </form> */}
             </div>
          </div>
       </header>
