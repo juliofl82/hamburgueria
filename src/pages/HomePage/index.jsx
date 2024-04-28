@@ -7,11 +7,13 @@ import styles from "./styles.module.scss";
 
 export const HomePage = () => {
     const [productList, setProductList] = useState([]);
-    const [cartList, setCartList] = useState([]);
+    const [cartList, setCartList] = useState(() => {
+        const savedCart = localStorage.getItem('cartList');
+        return savedCart ? JSON.parse(savedCart) : [];
+    });
     const [isCartVisible, setIsCartVisible] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
-
-    // Carrega produtos da API
+    
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -23,12 +25,10 @@ export const HomePage = () => {
         };
         fetchProducts();
     }, []);
-
-    // Persistência dos produtos e do carrinho no localStorage
+    
     useEffect(() => {
-        localStorage.setItem('productList', JSON.stringify(productList));
         localStorage.setItem('cartList', JSON.stringify(cartList));
-    }, [productList, cartList]);
+    }, [cartList]);
 
     const addToCart = (product) => {
         const existingItem = cartList.find(item => item.id === product.id);
