@@ -28,7 +28,7 @@
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 1);
     justify-content: space-between;
-    overflow-y: auto;
+    
 
     button {
         @include buttonDefault;
@@ -68,11 +68,13 @@
     flex-direction: column;
     margin: 0 auto;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .totalBox {
     display: flex;
+    background-color: white;
 }
 
 .totalCartGrid {
