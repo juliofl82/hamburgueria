@@ -30,12 +30,12 @@ export const HomePage = () => {
         localStorage.setItem('cartList', JSON.stringify(cartList));
     }, [cartList]);
 
-    const addToCart = (product) => {
-        const existingItem = cartList.find(item => item.id === product.id);
-        setCartList(existingItem ?
-            cartList.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item) :
-            [...cartList, { ...product, quantity: 1 }]
-        );
+    const addToCart = (product) => {        
+        const existingItem = cartList.find(item => item.id === product.id);        
+        if (existingItem) {
+            return;
+        }        
+        setCartList([...cartList, { ...product, quantity: 1 }]);
     };
 
     const toggleCartVisibility = () => {
